@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="브이투엑스원 V2X·AI 교통기술 제품 소개" />
+  <title>브이투엑스원 | V2X·AI 교통기술 제품 소개</title>
+  <style>
+    :root {
+      --navy: #0b3448;
+      --navy-2: #102f3d;
+      --blue: #1976d2;
+      --sky: #eaf5fb;
+      --cyan: #18a8c7;
+      --green: #16a085;
+      --text: #18323d;
+      --muted: #667a83;
+      --line: #dce8ed;
+      --white: #ffffff;
+      --shadow: 0 14px 36px rgba(11, 52, 72, 0.12);
+      --radius: 22px;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--text);
+      background: #f7fbfd;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220, 232, 237, 0.85);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, var(--navy), var(--cyan));
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.05;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(11, 52, 72, 0.2);
+    }
+
+    .brand-text small {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #3c5965;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(24, 168, 199, 0.2), transparent 30%),
+        radial-gradient(circle at 85% 22%, rgba(25, 118, 210, 0.14), transparent 28%),
+        linear-gradient(135deg, #071f2b 0%, #0b3448 48%, #0f5168 100%);
+      color: #fff;
+      padding: 92px 0 80px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      color: #cfeef8;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: #d4e6ed;
+      font-size: 19px;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--navy);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.06);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-panel {
+      padding: 26px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 28px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.22);
+    }
+
+    .hero-video {
+      min-height: 330px;
+      border-radius: 20px;
+      border: 1px dashed rgba(255,255,255,.38);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #d5edf5;
+      background: rgba(4, 24, 33, .34);
+    }
+
+    .play {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 16px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      font-size: 26px;
+    }
+
+    section { padding: 86px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .pill {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .cap-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(11, 52, 72, 0.06);
+    }
+
+    .cap-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--sky);
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .cap-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .cap-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow {
+      background: #edf7fb;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 24px 22px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      min-height: 190px;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-size: 28px;
+      font-weight: 900;
+      z-index: 2;
+    }
+
+    .flow-number {
+      color: var(--cyan);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .flow-step h3 {
+      margin: 10px 0 8px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .category-tabs a {
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #4a6570;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .category-tabs a:hover {
+      color: #fff;
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .product-group { margin-top: 58px; }
+    .product-group:first-of-type { margin-top: 0; }
+
+    .group-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .group-title h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 28px;
+      letter-spacing: -0.035em;
+    }
+
+    .group-line {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .product-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 238px;
+      background: linear-gradient(135deg, #eaf5fb, #f7fbfd);
+    }
+
+    .media-placeholder {
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      text-align: center;
+      color: #6c8792;
+      border-right: 1px solid var(--line);
+      min-height: 238px;
+    }
+
+    .media-placeholder:last-child { border-right: 0; }
+
+    /* 제품 카드 영상 크기·비율 통일 */
+    .video-box {
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+      min-height: 238px;
+    }
+
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      min-height: 238px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      background: #000;
+    }
+
+    .media-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(11, 52, 72, .1);
+      font-size: 22px;
+    }
+
+    .media-placeholder strong {
+      display: block;
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    .media-placeholder small {
+      display: block;
+      margin-top: 4px;
+      color: #79909a;
+    }
+
+    .product-body { padding: 28px; }
+
+    .product-kicker {
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .product-body h4 {
+      margin: 8px 0 5px;
+      color: var(--navy);
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .product-en {
+      margin: 0 0 14px;
+      color: #82949c;
+      font-size: 13px;
+    }
+
+    .product-desc {
+      margin: 0 0 18px;
+      color: #4a626d;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #425963;
+      font-size: 14px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tech-tags span {
+      padding: 6px 9px;
+      border-radius: 8px;
+      background: #f1f7fa;
+      border: 1px solid #e0ebef;
+      color: #54707b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #0b3448, #0f536a);
+      color: #fff;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 34px;
+      align-items: center;
+      padding: 40px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .contact h2 {
+      margin: 0 0 10px;
+      font-size: 38px;
+      letter-spacing: -0.045em;
+    }
+
+    .contact p {
+      margin: 0;
+      color: #d6e8ef;
+    }
+
+    .contact-info {
+      text-align: right;
+      white-space: nowrap;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 26px 0;
+      background: #071f2b;
+      color: #9db2bb;
+      font-size: 13px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .capabilities, .flow-grid { grid-template-columns: repeat(2, 1fr); }
+      .flow-step:nth-child(2)::after { display: none; }
+      .products { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(var(--max), calc(100% - 24px)); }
+      .hero { padding: 66px 0 58px; }
+      .hero-panel { padding: 16px; }
+      .hero-video { min-height: 250px; }
+      section { padding: 64px 0; }
+      .section-head { display: block; }
+      .capabilities, .flow-grid { grid-template-columns: 1fr; }
+      .flow-step::after { display: none !important; }
+      .product-media { grid-template-columns: 1fr; }
+      .media-placeholder { border-right: 0; border-bottom: 1px solid var(--line); }
+      .media-placeholder:last-child { border-bottom: 0; }
+      .video-box,
+      .video-box video {
+        min-height: 220px;
+      }
+      .feature-list { grid-template-columns: 1fr; }
+      .contact-card { grid-template-columns: 1fr; }
+      .contact-info { text-align: left; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">V2X<br>ONE</span>
+        <span class="brand-text">브이투엑스원<small>V2X · AI MOBILITY TECHNOLOGY</small></span>
+      </a>
+      <nav class="nav-links" aria-label="주요 메뉴">
+        <a href="#about">회사소개</a>
+        <a href="#technology">핵심기술</a>
+        <a href="#products">제품</a>
+        <a href="#integration">통합구성</a>
+        <a href="#contact">문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">AI · V2X · C-ITS · AUTONOMOUS DRIVING</span>
+          <h1>도로 센서에서<br>자율주행차까지</h1>
+          <p>
+            브이투엑스원은 카메라·LiDAR 기반 교통객체 검지, 센서융합,
+            정밀도로지도와 신호정보 생성, V2X 메시지 처리, V2N 서버 및
+            자율주행차 연계를 하나의 통합 기술체계로 제공합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">제품 살펴보기</a>
+            <a class="btn btn-secondary" href="#integration">통합구성 보기</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <!-- 메인 홍보영상 삽입 위치
+          아래 .hero-video 요소를 다음 video 태그로 교체하세요.
+          <video class="hero-video" controls muted playsinline poster="images/main-poster.jpg">
+            <source src="videos/company-intro.mp4" type="video/mp4">
+          </video>
+          -->
+          <div class="hero-video">
+            <div>
+              <div class="play">▶</div>
+              <strong>회사·통합솔루션 소개영상 영역</strong>
+              <div style="margin-top:6px;font-size:13px;">권장 길이 45~90초 · 16:9 영상</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="pill">Company Overview</span>
+            <h2>V2X 전 과정을 구현하는<br>통합 기술기업</h2>
+          </div>
+          <p>
+            표준 메시지 생성과 분석, OBU·RSU 통신, MAP·SPaT 연계,
+            AI 센서 검지, V2N 서버, 자율주행차 연동까지 실제 현장에 필요한
+            소프트웨어와 시스템을 직접 개발합니다.
+          </p>
+        </div>
+
+        <div class="capabilities">
+          <article class="cap-card">
+            <div class="cap-icon">📡</div>
+            <h3>V2X 통신·표준</h3>
+            <p>IEEE 1609, SAE J2735, KSR1600 기반 메시지 생성·수신·분석</p>
+          </article>
+          <article class="cap-card">
+            <div class="cap-icon">🗺️</div>
+            <h3>지도·신호 연계</h3>
+            <p>MAP·SPaT 데이터 생성, 차선 매칭, 정지선 거리 및 신호 연계</p>
+          </article>
+          <article class="cap-card">
+            <div class="cap-icon">◉</div>
+            <h3>AI 센서 검지</h3>
+            <p>카메라·LiDAR 기반 객체 검지, 추적, 속도·방향·위험정보 생성</p>
+          </article>
+          <article class="cap-card">
+            <div class="cap-icon">↔</div>
+            <h3>서버·차량 연계</h3>
+            <p>V2N, MQTT, TCP, UDP, HTTP, JSON 기반 실시간 시스템 통합</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="integration">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="pill">Integrated Architecture</span>
+            <h2>수집부터 차량 서비스까지<br>하나로 연결합니다</h2>
+          </div>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-step">
+            <div class="flow-number">STEP 01</div>
+            <h3>도로정보 수집</h3>
+            <p>Camera, LiDAR, 신호제어기, RSU, GPS 및 정밀도로지도 데이터 수집</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-number">STEP 02</div>
+            <h3>AI 분석·융합</h3>
+            <p>객체 검지, 추적, 센서융합, 위험상황 판단 및 위치·속도·방향 생성</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-number">STEP 03</div>
+            <h3>V2X 정보 생성</h3>
+            <p>SPaT, MAP, TIM, RSA, SDSM 등 표준 기반 메시지 생성·변환</p>
+          </article>
+          <article class="flow-step">
+            <div class="flow-number">STEP 04</div>
+            <h3>차량·관제 연계</h3>
+            <p>V2N 서버, RSU, OBU, 자율주행차 및 교통관제 시스템으로 전달</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="pill">Products & Solutions</span>
+            <h2>제품 및 솔루션</h2>
+            <p>신규 제품을 중심으로 기존 V2X 시험·분석 제품까지 통합 구성했습니다.</p>
+          </div>
+        </div>
+
+        <div class="category-tabs">
+          <a href="#group-server">V2X 통신·서버</a>
+          <a href="#group-map">지도·차량 연계</a>
+          <a href="#group-ai">AI 센서 검지</a>
+          <a href="#group-tools">분석·시험 도구</a>
+        </div>
+
+        <div class="product-group" id="group-server">
+          <div class="group-title"><h3>V2X 통신·서버</h3><div class="group-line"></div></div>
+          <div class="products">
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">▧</div><strong>제품 대표 이미지</strong><small>V2X 메시지 처리, 차량 연계 및 실시간 서비스 제공</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_5ab5665ae7a249f8bc9854358bef3cde/1080p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+					</video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">NEW PRODUCT</span>
+                <h4>V2X Service Platform</h4>
+                <p class="product-en">V2X Service Platform</p>
+                <p class="product-desc">V2X 및 V2N 환경에서 생성되는 교통정보를 통합 수집·처리하고 RSU, OBU, 차량, 관제시스템 및 외부 서비스와 실시간으로 연계하는 통합 플랫폼입니다.</p>
+                <ul class="feature-list">
+                  <li>V2X·V2N 통합 연계</li><li>SPaT·MAP·TIM·RSA·SDSM 처리</li>
+                  <li>RSU·OBU·차량 연계</li><li>MQTT·TCP·UDP·HTTP 지원</li>
+                  <li>RSU·OBU·자율차 연계</li><li>위치 기반 서비스 제공</li>
+                <li>외부 시스템 API 연계</li><li>실시간 모니터링 및 저장</li>
+                </ul>
+                <div class="tech-tags"><span>SPaT</span><span>MAP</span><span>TIM</span><span>RSA</span><span>SDSM</span><span>JSON</span></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">AI</div><strong>AI 분석, 이벤트 관리 및 통합 모니터링</strong><small>AI Traffic Analytics</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="videos/AI Traffic Analytics.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+					</video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">NEW PRODUCT</span>
+                <h4>AI 교통정보 분석·연계 서버</h4>
+                <p class="product-en">AI Traffic Analytics Server</p>
+                <p class="product-desc">카메라, LiDAR, V2X 및 외부 교통데이터를 통합하여 교통상황과 위험이벤트를 분석하고 관제·차량 서비스에 제공합니다.</p>
+                <ul class="feature-list">
+                  <li>객체·이벤트 통합 수집</li><li>정지·역주행·위험접근 분석</li>
+                  <li>교통량·속도·차종 분석</li><li>이력 저장·검색</li>
+                  <li>REST API·MQTT 연계</li><li>지도·대시보드 시각화</li>
+                </ul>
+                <div class="tech-tags"><span>AI Analytics</span><span>REST API</span><span>MQTT</span><span>Dashboard</span></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="product-group" id="group-map">
+          <div class="group-title"><h3>지도·차량 연계</h3><div class="group-line"></div></div>
+          <div class="products">
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">🗺</div><strong>교차로 편집, 차선 구성 및 MAP 데이터 생성</strong><small>MAP Builder</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="videos/map-builder.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+					</video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">NEW PRODUCT</span>
+                <h4>V2X MAP 데이터 생성·검증 도구</h4>
+                <p class="product-en">V2X MAP Builder</p>
+                <p class="product-desc">교차로 차선, 연결로, 정지선, 신호그룹을 편집하여 표준 MAP 메시지를 생성하고 실제 차량 주행정보와 정합성을 검증합니다.</p>
+                <ul class="feature-list">
+                  <li>교차로·차선·노드 편집</li><li>정지선·신호그룹 연결</li>
+                  <li>MAP 메시지 생성</li><li>차량 주행차선 매칭</li>
+                  <li>정지선 잔여거리 계산</li><li>MAP·SPaT 연계 검증</li>
+                </ul>
+                <div class="tech-tags"><span>SAE J2735</span><span>KSR1600</span><span>MAP</span><span>SPaT</span><span>Lane Matching</span></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">🖥️</div><strong>운전자에게 직관적인 V2X 서비스를 제공</strong><small>V2X HMI</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_7ea58f16d68847d8b4c6fa6d7c72c08e/1080p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">VEHICLE HMI</span>
+                <h4>V2X HMI 서비스 표출장치</h4>
+                <p class="product-en">V2X HMI Service Display Device</p>
+                <p class="product-desc">OBU 또는 V2N 서버에서 수신한 신호·도로·위험정보를 운전자가 직관적으로 확인할 수 있도록 지도, 아이콘, 경고화면과 음성으로 제공합니다.</p>
+                <ul class="feature-list">
+                  <li>교차로 신호정보 표출</li><li>신호위반 위험 경고</li>
+                  <li>TIM·RSA 안전정보 안내</li><li>V2V BSM 주변차량 표시</li>
+                  <li>지도 기반 위치·경로 표출</li><li>시각·음성 경고 지원</li>
+                </ul>
+                <div class="tech-tags"><span>SPaT</span><span>MAP</span><span>TIM</span><span>RSA</span><span>BSM</span><span>HMI</span></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="product-group" id="group-ai">
+          <div class="group-title"><h3>AI 센서 검지 · 영상 / LiDAR / 융합</h3><div class="group-line"></div></div>
+          <div class="products">
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">◌</div><strong>3D 포인트클라우드 기반 객체 검지 및 추적</strong><small>LiDAR Detection</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_3cfbb86bbd22444c9ebd38ba80efd9c8/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">NEW PRODUCT</span>
+                <h4>LiDAR 교통객체 검지 시스템</h4>
+                <p class="product-en">LiDAR Traffic Object Detector</p>
+                <p class="product-desc">3차원 포인트클라우드를 분석하여 차량, 보행자, 자전거 등 교통객체의 위치·속도·방향을 실시간 생성합니다.</p>
+                <ul class="feature-list">
+                  <li>포인트클라우드 실시간 수신</li><li>배경 제거·노이즈 필터</li>
+                  <li>객체 클러스터링·분류</li><li>객체 ID 추적</li>
+                  <li>위치·속도·방향 계산</li><li>WGS84·UTM 좌표 변환</li>
+                </ul>
+                <div class="tech-tags"><span>LiDAR</span><span>Point Cloud</span><span>Clustering</span><span>Tracking</span><span>SDSM</span></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">◎</div><strong>Camera와 LiDAR를 결합한 고정밀 객체 생성</strong><small>Sensor Fusion</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="videos/sensor-fusion.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">NEW PRODUCT</span>
+                <h4>Camera·LiDAR 센서융합 검지 시스템</h4>
+                <p class="product-en">AI Sensor Fusion Detector</p>
+                <p class="product-desc">카메라의 객체분류 정보와 LiDAR의 정밀 위치정보를 결합하여 신뢰도 높은 통합 교통객체 정보를 생성합니다.</p>
+                <ul class="feature-list">
+                  <li>카메라 AI 객체검지</li><li>LiDAR 3차원 검지</li>
+                  <li>센서 시간 동기화</li><li>위치 기반 객체 매칭</li>
+                  <li>통합 ID·궤적 관리</li><li>SDSM·RSA 생성 연계</li>
+                </ul>
+                <div class="tech-tags"><span>Camera AI</span><span>LiDAR</span><span>Sensor Fusion</span><span>Risk Event</span></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">🎥</div><strong>영상검지 화면 이미지</strong><small>카메라 객체검지·추적 화면</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_83e33d5414a64f1bae2db997b66caf7f/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">AI VISION</span>
+                <h4>AI 영상 기반 교통객체 검지 시스템</h4>
+                <p class="product-en">AI Video Traffic Object Detector</p>
+                <p class="product-desc">도로에 설치된 카메라 영상을 분석하여 차량, 보행자, 자전거 등 교통객체를 실시간으로 검지·추적하고 위치·속도·진행방향 정보를 생성합니다.</p>
+                <ul class="feature-list">
+                  <li>차량·보행자·자전거 검지</li><li>객체 ID 추적</li>
+                  <li>위치·속도·방향 계산</li><li>도로영역·차선 기반 분석</li>
+                  <li>위험상황 이벤트 판단</li><li>SDSM·RSA 생성 연계</li>
+                </ul>
+                <div class="tech-tags"><span>Camera AI</span><span>Object Detection</span><span>Tracking</span><span>SDSM</span><span>RSA</span></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="product-group" id="group-tools">
+          <div class="group-title"><h3>분석·시험 도구</h3><div class="group-line"></div></div>
+          <div class="products">
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">🧪</div><strong>표준 V2X 메시지 생성 및 통합 시험환경</strong><small>V2X Simulator</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_6f603843382e42b3a888ef7b267669f9/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">CORE TOOL</span>
+                <h4>V2X 통합 시뮬레이터</h4>
+                <p class="product-en">V2X Integrated Simulator</p>
+                <p class="product-desc">교차로 신호와 도로정보를 생성하고 OBU·RSU·자율주행차 연동을 시험하는 통합 시험도구입니다.</p>
+                <ul class="feature-list">
+                  <li>SPaT·MAP·TIM·RSA 생성</li><li>BSM·PVD·PSM·SDSM 표출</li>
+                  <li>지도 기반 이동 시뮬레이션</li><li>WAVE·LTE-V2X 시험</li>
+                  <li>표준 인코딩·디코딩 검증</li><li>실시간 로그·상태 확인</li>
+                </ul>
+                <div class="tech-tags"><span>IEEE 1609</span><span>SAE J2735</span><span>KSR1600</span><span>WAVE</span><span>LTE-V2X</span></div>
+              </div>
+            </article>
+
+            
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_b0588441d7484ea796823611c1167727/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_050986a0235c40e180610bde1db21c7b/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">GPS TEST TOOL</span>
+                <h4>GPS NMEA 생성·뷰어 소프트웨어</h4>
+                <p class="product-en">GPS NMEA Generator & Viewer</p>
+                <p class="product-desc">지도에서 차량 이동경로와 주행조건을 설정해 GPS NMEA 데이터를 생성하고, 수신된 위치·속도·방향 정보를 실시간으로 확인하는 시험도구입니다.</p>
+                <ul class="feature-list">
+                  <li>지도 기반 이동경로 설정</li><li>GPS NMEA 문장 생성</li>
+                  <li>위치·속도·방향 설정</li><li>실시간 NMEA 수신·표출</li>
+                  <li>주행 시나리오 재생</li><li>OBU·RSU·서버 연계시험</li>
+                </ul>
+                <div class="tech-tags"><span>GNRMC</span><span>GNGGA</span><span>GNVTG</span><span>GPS</span><span>NMEA</span></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">🔐</div><strong>V2X 보안 인증서 생성 및 관리</strong><small>Certificate Generator</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_6660011c922843fc93465508adeac4f0/1080p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">SECURITY TOOL</span>
+                <h4>V2X 인증서 번들 생성 소프트웨어</h4>
+                <p class="product-en">V2X Certificate Bundle Generator</p>
+                <p class="product-desc">IEEE 1609.2 기반 Application 및 Pseudonym 인증서 번들을 생성하고 시험환경에 적용합니다.</p>
+                <ul class="feature-list">
+                  <li>Application 인증서 생성</li><li>Pseudonym 인증서 생성</li>
+                  <li>인증서 세트·번들 구성</li><li>시험용 보안환경 지원</li>
+                  <li>인증서 정보 확인</li><li>IEEE 1609.2 연계</li>
+                </ul>
+                <div class="tech-tags"><span>IEEE 1609.2</span><span>Certificate</span><span>Security</span></div>
+              </div>
+            </article>
+
+
+
+			<article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div>
+                    <div class="media-icon">⌁</div>
+                    <strong>PCAP 기반 V2X 메시지를<br>지도와 함께 실시간으로 시각화합니다.</strong>
+                  </div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_d3e96a754da645a78f5bb0809c32411d/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">VISUALIZATION TOOL</span>
+                <h4>V2X PCAP 시각화 도구</h4>
+                <p class="product-en">V2X PCAP Visualization Tool</p>
+                <p class="product-desc">Wireshark 등에서 저장한 PCAP 파일을 불러와 V2X 패킷과 차량·RSU 위치정보를 지도, 목록, 그래프 및 타임라인으로 후처리 분석합니다.</p>
+                <ul class="feature-list">
+                  <li>저장 PCAP 파일 로딩</li><li>패킷 시간순 재생</li>
+                  <li>차량·RSU 위치 지도 표출</li><li>메시지 종류별 필터링</li>
+                  <li>RSSI·거리·수신상태 시각화</li><li>후처리 결과 비교·검증</li>
+                </ul>
+                <div class="tech-tags"><span>PCAP</span><span>Post Processing</span><span>Map</span><span>Timeline</span><span>Visualization</span></div>
+              </div>
+            </article>
+
+			<article class="product-card">
+              <div class="product-media">
+                <div class="media-placeholder">
+                  <div><div class="media-icon">🦈</div><strong>표준 V2X 메시지 상세 분석</strong><small>Wireshark 기반 계층·필드 디코딩</small></div>
+                </div>
+                <div class="media-placeholder video-box"><video controls muted playsinline preload="metadata"
+                        >
+                    <source src="https://video.wixstatic.com/video/b89b56_1d57d34b42124670aea3eb9d5e4df409/720p/mp4/file.mp4" type="video/mp4">
+                    현재 브라우저는 MP4 영상을 지원하지 않습니다.
+                  </video>
+                </div>
+              </div>
+              <div class="product-body">
+                <span class="product-kicker">PROTOCOL ANALYZER</span>
+                <h4>V2X 메시지 분석기 (Wireshark)</h4>
+                <p class="product-en">V2X Message Analyzer for Wireshark</p>
+                <p class="product-desc">Wireshark에서 IEEE 1609 및 SAE J2735 기반 V2X 패킷의 프로토콜 계층과 메시지 상세 필드를 직접 분석할 수 있도록 전용 디코더를 제공합니다.</p>
+                <ul class="feature-list">
+                  <li>IEEE 1609.2 보안계층 분석</li><li>IEEE 1609.3 네트워크계층 분석</li>
+                  <li>SAE J2735 메시지 디코딩</li><li>KSR1600 메시지 분석</li>
+                  <li>SPaT·MAP·TIM·RSA 분석</li><li>BSM·PVD·PSM·SDSM 분석</li>
+                </ul>
+                <div class="tech-tags"><span>Wireshark</span><span>IEEE 1609.2</span><span>IEEE 1609.3</span><span>SAE J2735</span><span>KSR1600</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <h2>제품·기술 협력 문의</h2>
+            <p>V2X 실증, AI 센서 검지, 자율주행차 연계 및 현장 구축에 대해 문의해 주세요.</p>
+          </div>
+          <div class="contact-info">
+            <div>㈜브이투엑스원</div>
+            <div style="margin-top:6px;color:#cfe8f1;">geniusv01@v2xone.com</div>
+            <div style="margin-top:3px;color:#cfe8f1;">대표 연락처·주소 입력</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© V2X ONE Co., Ltd. All rights reserved.</span>
+      <span>V2X · AI · C-ITS · Autonomous Driving</span>
+    </div>
+  </footer>
+</body>
+</html>
